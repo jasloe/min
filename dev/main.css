@@ -1,0 +1,36 @@
+:root {
+  --mainColor: green;
+}
+@media (max-width: 100rem) {
+  body {
+    color: green;
+    color: green;
+    color: var(--mainColor);
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+    font-size: calc(1.425rem + 2.1vw);
+    line-height: calc(var(--fontSize) * 1.5);
+    word-wrap: break-word;
+    padding-left: calc((var(--fontSize) / 2) + 1px);
+    padding-right: calc((var(--fontSize) / 2) + 1px);
+  }
+  @media (min-width: 1200px) {
+    body {
+    font-size: 3rem;
+    }
+  }
+}
+h1,h2,h3,h4,h5,h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+a {
+  color: #639
+}
+a:hover {
+    color: color-mod(green b(15%) a(20%));
+    color: color-mod(green b(15%) a(20%));
+    color: color-mod(var(--mainColor) b(15%) a(20%));
+  }
+
+
+/*# sourceMappingURL=main.css.map*/
