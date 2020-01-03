@@ -7,6 +7,8 @@
     "@babel/core": "^7.7.4",
     "@babel/plugin-proposal-object-rest-spread": "^7.7.4",
     "@babel/preset-env": "^7.7.4",
+    "@barba/core": "^2.9.6",
+    "@barba/css": "^2.1.15",
     "autoprefixer": "^9.7.2",
     "babel": "^6.23.0",
     "babel-core": "^6.26.3",
@@ -20,6 +22,7 @@
     "cssnano": "^4.1.10",
     "file-loader": "^5.0.2",
     "lost": "^8.3.1",
+    "micromodal": "^0.4.2",
     "mini-css-extract-plugin": "^0.8.0",
     "postcss-font-magician": "^2.3.1",
     "postcss-import": "^12.0.1",
@@ -40,5 +43,6 @@
     "develop": "webpack --config webpack.config.js --mode development",
     "start": "webpack --watch",
     "start:dev": "webpack --watch --mode development"
-  }
+  },
+  "dependencies": {}
 }

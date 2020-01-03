@@ -2,14 +2,14 @@
 @custom-selector :--heading h1, h2, h3, h4, h5, h6;
 
 :root {
-  --mainColor: green;
+  --mainColor: black;
 }
 
 @media (--viewport-medium) {
   body {
     color: var(--mainColor);
     font-family: system-ui;
-    font-size: rfs(3rem);
+    font-size: rfs(1rem);
     line-height: calc(var(--fontSize) * 1.5);
     overflow-wrap: break-word;
     padding-inline: calc((var(--fontSize) / 2) + 1px);
@@ -21,7 +21,8 @@
 }
 
 a {
-  color: rebeccapurple;
+  color: black;
+  text-decoration: none;
 
   &:hover {
     color: color-mod(var(--mainColor) b(15%) a(20%));

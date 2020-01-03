@@ -1,22 +1,17 @@
 :root {
-  --mainColor: green;
+  --mainColor: black;
 }
 @media (max-width: 100rem) {
   body {
-    color: green;
-    color: green;
+    color: black;
+    color: black;
     color: var(--mainColor);
     font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
-    font-size: calc(1.425rem + 2.1vw);
+    font-size: 1rem;
     line-height: calc(var(--fontSize) * 1.5);
     word-wrap: break-word;
     padding-left: calc((var(--fontSize) / 2) + 1px);
     padding-right: calc((var(--fontSize) / 2) + 1px);
-  }
-  @media (min-width: 1200px) {
-    body {
-    font-size: 3rem;
-    }
   }
 }
 h1,h2,h3,h4,h5,h6 {
@@ -24,13 +19,35 @@ h1,h2,h3,h4,h5,h6 {
   margin-bottom: 0;
 }
 a {
-  color: #639
+  color: black;
+  text-decoration: none
 }
 a:hover {
-    color: color-mod(green b(15%) a(20%));
-    color: color-mod(green b(15%) a(20%));
+    color: color-mod(black b(15%) a(20%));
+    color: color-mod(black b(15%) a(20%));
     color: color-mod(var(--mainColor) b(15%) a(20%));
   }
+/* transition active state (same for leave and enter) */
+.barba-leave-active,
+.barba-enter-active {
+  -webkit-transition: opacity 500ms ease, background 500ms ease;
+  transition: opacity 500ms ease, background 500ms ease;
+}
+/* initial state */
+.barba-leave {
+  opacity: 1;
+}
+.barba-enter {
+  opacity: 0;
+}
+/* ending state */
+.barba-leave-to {
+  opacity: 0;
+}
+.barba-enter-to {
+  opacity: 1;
+}
+/* Note that this code can be refactored for optimization */
 
 
 /*# sourceMappingURL=main.css.map*/
