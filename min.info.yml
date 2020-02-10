@@ -19,3 +19,8 @@ regions:
   footer_first: First footer
   footer_second: Second footer
   legal: Legal
+
+component-libraries:
+  modules:
+    paths:
+      - components/patterns/modules

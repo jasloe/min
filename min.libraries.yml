@@ -3,6 +3,8 @@ global-styling:
   css:
     base:
       dev/main.css: {}
+  # dependencies:
+  #   - ui_patterns/blockquote.blockquote
 global-scripts:
   version: VERSION
   js:

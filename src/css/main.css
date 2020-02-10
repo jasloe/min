@@ -1,4 +1,4 @@
-@import "./components/all.css";
+@import "../../components/patterns/modules/content/page-title/page-title.component.css"
 
 /* transition active state (same for leave and enter) */
 .barba-leave-active,
@@ -23,5 +23,6 @@
 .barba-enter-to {
   opacity: 1;
 }
+
 
 /* Note that this code can be refactored for optimization */
