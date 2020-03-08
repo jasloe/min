@@ -5,12 +5,12 @@ const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
 module.exports = () => {
   return {
     entry: {
-      main: ["./src/css/main.css", "./src/js/main.js"]
+      main: ["./src/scss/main.scss", "./src/js/main.js"]
     },
     module: {
       rules: [
         {
-          test: /\.css$/,
+          test: /\.(sa|sc|c)ss$/,
           use: [
             {
               loader: MiniCssExtractPlugin.loader
@@ -30,7 +30,13 @@ module.exports = () => {
                 },
                 sourceMap: true
               }
-            }
+            },
+            {
+               loader: "sass-loader",
+               options: {
+                 implementation: require("sass")
+               }
+             },
           ]
         },
         {
@@ -55,10 +61,7 @@ module.exports = () => {
         host: "localhost",
         port: 8080,
         proxy: "http://local.asphodel.local/",
-        files: [
-          '*.theme',
-          'templates/**/*.twig'
-        ]
+        files: ["*.theme", "templates/**/*.twig"]
       })
     ]
   };

@@ -2,6 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+
 html,
 body,
 div,
@@ -90,6 +91,7 @@ video {
   font: inherit;
   vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
 article,
 aside,
@@ -104,15 +106,18 @@ nav,
 section {
   display: block;
 }
+
 ol,
 ul,
 li {
   list-style: none;
 }
+
 blockquote,
 q {
   quotes: none;
 }
+
 blockquote:before,
 blockquote:after,
 q:before,
@@ -120,10 +125,13 @@ q:after {
   content: "";
   content: none;
 }
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+// Button reset borrowed from Normalize.css
 button,
 input,
 optgroup,
@@ -134,42 +142,20 @@ textarea {
   margin: 0;
   padding: 0;
 }
+
 button,
 input {
   overflow: visible;
 }
+
 button,
 select {
   text-transform: none;
 }
+
 button,
-[type=button],
-[type=reset],
-[type=submit] {
+[type="button"],
+[type="reset"],
+[type="submit"] {
   -webkit-appearance: button;
 }
-.foo ::-webkit-input-placeholder {
-  color: blanchedalmond;
-}
-.foo ::-moz-placeholder {
-  color: blanchedalmond;
-}
-.foo :-ms-input-placeholder {
-  color: blanchedalmond;
-}
-.foo ::-ms-input-placeholder {
-  color: blanchedalmond;
-}
-.foo ::placeholder {
-  color: blanchedalmond;
-}
-@media (max-width: 50rem) {
-  body {
-    background-color: powderblue;
-  }
-}
-a {
-  text-decoration: none;
-}
-
-/*# sourceMappingURL=main.css.map*/
