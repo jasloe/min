@@ -43,26 +43,23 @@
  * @see html.html.twig
  */
 #}
-<div class="layout-container">
+<div class="layout__container">
 
 	<header role="banner">
 		{{ page.header }}
 	</header>
 
 	{{ page.breadcrumb }}
-
 	{{ page.highlighted }}
-
 	{{ page.help }}
 
 	<main role="main">
 		<a id="main-content" tabindex="-1"></a>
-		{# link is in html.html.twig #}
 
-		<div class="layout-content">
+		<div class="layout__content">
+			{{ page.content_pre }}
 			{{ page.content }}
 		</div>
-		{# /.layout-content #}
 
 	</main>
 

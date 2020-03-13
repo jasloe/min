@@ -2,154 +2,78 @@
 
 /**
  * @file
- * Functions to support theming in the cage theme.
+ * Functions to support theming in the min theme.
  */
+
+use Drupal\Core\Url;
 
 /**
- * Implements hook_preprocess_HOOK() for html.html.twig.
+ * Implements template_preprocess_html().
+ * @param array $variables
  */
-function min_preprocess_html(array &$variables) {
-  /* Add class to html tag */
-  //$variables['html_attributes']->addClass('no-js');
+function min_preprocess_html(&$variables) {
 
-  // Don't display the site name twice on the front page (and potentially others)
-  /*if (isset($variables['head_title_array']['title']) && isset($variables['head_title_array']['name']) && ($variables['head_title_array']['title'] == $variables['head_title_array']['name'])) {
-    $variables['head_title'] = $variables['head_title_array']['name'];
-  }*/
+  if (!empty($variables['page']['sidebar_first'])) {
+    $sidebar_left = $variables['page']['sidebar_first'];
+  }
+
+  if (!empty($variables['page']['sidebar_second'])) {
+    $sidebar_right = $variables['page']['sidebar_second'];
+  }
+
+  // Dynamic sidebars.
+  if (!empty($sidebar_left) && !empty($sidebar_right)) {
+    $variables['attributes']['class'][] = 'two-sidebars';
+  }
+  elseif (empty($sidebar_left) && !empty($sidebar_right)) {
+    $variables['attributes']['class'][] = 'one-sidebar';
+    $variables['attributes']['class'][] = 'sidebar-second';
+  }
+  elseif (!empty($sidebar_left) && empty($sidebar_right)) {
+    $variables['attributes']['class'][] = 'one-sidebar';
+    $variables['attributes']['class'][] = 'sidebar-first';
+  }
+  else {
+  $current_path = \Drupal::service('path.current')->getPath();
+  $path_alias = \Drupal::service('path.alias_manager')->getAliasByPath($current_path);
+  $path_alias = ltrim($path_alias, '/');
+  $variables['attributes']['class'][] = 'path-' . \Drupal\Component\Utility\Html::cleanCssIdentifier($path_alias);
+  }
+//kint($variables);
 }
 
 /**
- * Implements hook_page_attachments_alter().
+ * Implements template_preprocess_page.
+ * @param array $variables
  */
-function min_page_attachments_alter(array &$page) {
-  // Tell IE to use latest rendering engine (not to use compatibility mode).
-  /*$ie_edge = [
-    '#type' => 'html_tag',
-    '#tag' => 'meta',
-    '#attributes' => [
-    'http-equiv' => 'X-UA-Compatible',
-    'content' => 'IE=edge',
-    ],
-  ];
-  $page['#attached']['html_head'][] = [$ie_edge, 'ie_edge'];*/
-}
-
-/**
- * Implements hook_preprocess_page() for page.html.twig.
- */
-function min_preprocess_page(array &$variables) {
-
+function min_preprocess_page(&$variables) {
+  $site_name = \Drupal::configFactory()->get('system.site')->get('name');
+  $variables['linked_site_name'] = ['#type' => 'link', '#title' => $site_name, '#url' => Url::fromRoute('<front>')];
 }
 
 /**
  * Implements hook_theme_suggestions_page_alter().
  */
-function min_suggestions_page_alter(array &$suggestions, array $variables) {
+function min_theme_suggestions_page_alter(array &$suggestions, array $variables) {
   if ($node = \Drupal::routeMatch()->getParameter('node')) {
     $suggestions[] = 'page__' . $node->bundle();
   }
 }
 
 /**
- * Implements hook_theme_suggestions_node_alter().
+ * Implements hook_theme_suggestions_block_alter().
  */
-function min_theme_suggestions_node_alter(array &$suggestions, array $variables) {
-  /*$node = $variables['elements']['#node'];
-
-  if ($variables['elements']['#view_mode'] == "full") {
-
-  }*/
+function min_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+  if (isset($variables['elements']['content']['#block_content'])) {
+    array_splice($suggestions, 1, 0, 'block__' . $variables['elements']['content']['#block_content']->bundle());
+  }
 }
 
 /**
- * Implements hook_preprocess_HOOK() for Block document templates.
+ * Implements template_preprocess_block__system_messages_block().
  */
-function min_preprocess_block(array &$variables) {
 
-}
-
-/**
- * Implements hook_theme_suggestions_field_alter().
- */
-function min_theme_suggestions_field_alter(array &$suggestions, array $variables) {
-  /*$element = $variables['element'];
-  $suggestions[] = 'field__' . $element['#view_mode'];
-  $suggestions[] = 'field__' . $element['#view_mode'] . '__' . $element['#field_name'];*/
-}
-
-/**
- * Implements hook_theme_suggestions_field_alter().
- */
-function min_theme_suggestions_fieldset_alter(array &$suggestions, array $variables) {
-  /*$element = $variables['element'];
-  if (isset($element['#attributes']['class']) && in_array('form-composite', $element['#attributes']['class'])) {
-    $suggestions[] = 'fieldset__form_composite';
-  }*/
-}
-
-/**
- * Implements hook_preprocess_node().
- */
-function min_preprocess_node(array &$variables) {
-  // Default to turning off byline/submitted.
-  //$variables['display_submitted'] = FALSE;
-}
-
-/**
- * Implements hook_theme_suggestions_views_view_alter().
- */
-function min_theme_suggestions_views_view_alter(array &$suggestions, array $variables) {
-
-}
-
-/**
- * Implements hook_preprocess_form().
- */
-function min_preprocess_form(array &$variables) {
-  //$variables['attributes']['novalidate'] = 'novalidate';
-}
-
-/**
- * Implements hook_preprocess_select().
- */
-function min_preprocess_select(array &$variables) {
-  //$variables['attributes']['class'][] = 'select-chosen';
-}
-
-/**
- * Implements hook_preprocess_field().
- */
-function min_preprocess_field(array &$variables, $hook) {
-  /*switch ($variables['element']['#field_name']) {
-  }*/
-}
-
-/**
- * Implements hook_preprocess_details().
- */
-function min_preprocess_details(array &$variables) {
-  /*$variables['attributes']['class'][] = 'details';
-  $variables['summary_attributes']['class'] = 'summary';*/
-}
-
-/**
- * Implements hook_theme_suggestions_details_alter().
- */
-function min_theme_suggestions_details_alter(array &$suggestions, array $variables) {
-
-}
-
-/**
- * Implements hook_preprocess_menu_local_task().
- */
-function min_preprocess_menu_local_task(array &$variables) {
-  //$variables['element']['#link']['url']->setOption('attributes', ['class'=>'rounded']);
-}
-
-/**
- * Implements hook_preprocess_block__system_messages_block().
- */
-function min_preprocess_block__system_messages_block(&$variables) {
+ // https://www.drupal.org/project/drupal/issues/3053838
+function min_preprocess_block__system_messages_block($variables) {
   $variables['content']['#include_fallback'] = FALSE;
 }
-

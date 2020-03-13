@@ -1,0 +1,29 @@
+# mobile portrait: less than 640px
+# mobile landscape: > 640px
+# tablet portrait: > 768px
+# tablet landscape: > 1024px
+# laptop: > 1280px
+
+min.x-small:
+  label: x-small
+  mediaQuery: "all and (max-width: 639px)"
+  weight: 0
+  multipliers:
+    - 1x
+    - 2x
+
+min.large:
+  label: large
+  mediaQuery: "(min-width: 768px) and (max-width: 1023px)"
+  weight: 1
+  multipliers:
+    - 1x
+    - 2x
+
+min.wide:
+  label: wide
+  mediaQuery: "all and (min-width: 1280px)"
+  weight: 2
+  multipliers:
+    - 1x
+    - 2x

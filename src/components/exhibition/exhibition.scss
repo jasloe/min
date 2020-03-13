@@ -1,1 +1,4 @@
 // contains style sheets for exhibiton nodes
+.exhibition__artwork {
+  @include flex(column);
+}

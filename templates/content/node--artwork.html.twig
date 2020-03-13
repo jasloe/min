@@ -74,16 +74,11 @@
 {# include artwork component template #}
 {%
   include '@asphodel/artwork/artwork.twig' with {
-    dates: content.field_artwork_dates
-  } only
-%}
-
-
-{%
-  include '@asphodel/artwork/artwork.twig' with {
+    images: content.field_artwork_images,
     title: label,
-    dimensions: content.field_artwork_dims,
+    dates: content.field_artwork_dates,
     materials: content.field_artwork_materials_descr,
+    dimensions: content.field_artwork_dims
   } only
 %}
 

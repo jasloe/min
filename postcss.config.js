@@ -6,10 +6,9 @@ module.exports = {
     "rfs": {},
     "postcss-font-magician": {
       variants: {
-        Roboto: {
-          "300": [],
+        Lora: {
           "400": [],
-          "700": []
+          "400 italic": []
         }
       },
       foundries: ["google"],

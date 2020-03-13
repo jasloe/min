@@ -1,0 +1,26 @@
+// variables
+$black: #000000;
+$white: #ffffff;
+$default-color: $black;
+
+@mixin flex($direction) {
+  display: flex;
+  flex-direction: $direction;
+}
+
+@mixin links {
+  text-decoration: none;
+  color: $black;
+}
+
+@mixin serif {
+  font-family: "Lora";
+
+  em {
+    font-family: "Lora Italic";
+  }
+}
+
+@mixin test {
+  display: none;
+}

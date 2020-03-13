@@ -1,5 +1,9 @@
+@charset "utf-8";
+
 @import "utilities/all";
+@import "base/all";
+@import "layout/all";
 @import "navigation/all";
 
-// @import "../../src/components/navigation/menu.scss";
-@import "../../src/components/artwork/artwork.scss";
+@import "../../src/components/artwork/artwork";
+@import "../../src/components/exhibition/exhibition";
