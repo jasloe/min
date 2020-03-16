@@ -159,13 +159,7 @@ a {
   margin: 1rem;
 }
 .exhibition-marquee .exhibition-marquee__image {
-  width: 100%;
-}
-.exhibition-marquee .exhibition-marquee__title {
-  color: red;
-}
-.exhibition-marquee .exhibition-marquee__artists {
-  color: blue;
+  display: none;
 }
 .barba-enter-active {
   -webkit-transition: opacity 500ms ease, background 500ms ease;
