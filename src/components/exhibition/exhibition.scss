@@ -1,4 +1,15 @@
 // contains style sheets for exhibiton nodes
-.exhibition__artwork {
-  @include flex(column);
+.exhibition-marquee {
+  .exhibition-marquee__image {
+    width: 100%;
+  }
+  .exhibition-marquee__title {
+    color: red;
+  }
+  .exhibition-marquee__artists {
+    color: blue;
+  }
 }
+
+
+

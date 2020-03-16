@@ -7,3 +7,22 @@
 
 @import "../../src/components/artwork/artwork";
 @import "../../src/components/exhibition/exhibition";
+
+
+.barba-enter-active {
+  transition: opacity 500ms ease, background 500ms ease;
+}
+/* initial state */
+.barba-leave {
+  opacity: 1;
+}
+.barba-enter {
+  opacity: 0;
+}
+/* ending state */
+.barba-leave-to {
+  opacity: 0;
+}
+.barba-enter-to {
+  opacity: 1;
+}

@@ -3,6 +3,9 @@ $black: #000000;
 $white: #ffffff;
 $default-color: $black;
 
+$sans: 'Roboto';
+$serif: Georgia;
+
 @mixin flex($direction) {
   display: flex;
   flex-direction: $direction;

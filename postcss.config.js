@@ -7,8 +7,8 @@ module.exports = {
     "postcss-font-magician": {
       variants: {
         Lora: {
-          "400": [],
-          "400 italic": []
+          "400": ['svg'],
+          "400 italic": ['svg']
         }
       },
       foundries: ["google"],
