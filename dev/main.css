@@ -155,8 +155,39 @@ a {
   text-decoration: none;
   color: #000000;
 }
+.js .lazyloaded {
+  -webkit-transition: opacity 3000ms !important;
+  transition: opacity 3000ms !important;
+}
 .artwork__wrapper {
-  margin: 1rem;
+  position: relative;
+  background: lightblue;
+  margin: 4rem;
+}
+.artwork__wrapper .artwork-images {
+  position: relative;
+  background: gray;
+  height: 0;
+  padding-top: calc(2000 / 1647 * 100%);
+}
+.artwork__wrapper picture img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+  height: auto;
+}
+.artwork-metadata {
+  background: gray;
+}
+.artwork-metadata h2, .artwork-metadata .field {
+  font-size: calc(1.425rem + 2.1vw);
+  color: red;
+}
+@media (min-width: 1200px) {
+  .artwork-metadata h2, .artwork-metadata .field {
+    font-size: 3rem;
+  }
 }
 .exhibition-marquee .exhibition-marquee__image {
   display: none;

@@ -1,4 +1,33 @@
 // contains style sheet for artwork nodes
+.js .lazyloaded {
+  transition: opacity 3000ms !important;
+}
+
 .artwork__wrapper {
-  margin: 1rem;
+  position: relative;
+  background: lightblue;
+  margin: 4rem;
+  .artwork-images {
+
+    position: relative;
+    background: gray;
+    height: 0;
+    padding-top: calc(2000 / 1647 * 100%);
+  }
+  picture img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+
+.artwork-metadata {
+  background: gray;
+    h2, .field {
+      @include font-size(3rem);
+      color: red;
+  }
 }
