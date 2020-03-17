@@ -60,7 +60,7 @@ module.exports = () => {
       new BrowserSyncPlugin({
         host: "localhost",
         port: 8080,
-        proxy: "http://local.asphodel.local/",
+        proxy: "http://local.asphodel-dev.local/",
         files: ["*.theme", "templates/**/*.twig"]
       })
     ]

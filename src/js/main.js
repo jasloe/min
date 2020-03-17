@@ -31,23 +31,74 @@ barba.init({
   }]
 });
 
-import "intersection-observer";
-import scrollama from "scrollama";
+// import "intersection-observer";
+// import scrollama from "scrollama";
 
-// instantiate the scrollama
-const scroller = scrollama();
+// // instantiate the scrollama
+// const scroller = scrollama();
 
-// setup the instance, pass callback functions
-scroller
-  .setup({
-    step: ".step"
-  })
-  .onStepEnter(response => {
-    // { element, index, direction }
-  })
-  .onStepExit(response => {
-    // { element, index, direction }
-  });
+// // setup the instance, pass callback functions
+// scroller
+//   .setup({
+//     step: ".step"
+//   })
+//   .onStepEnter(response => {
+//     // { element, index, direction }
+//   })
+//   .onStepExit(response => {
+//     // { element, index, direction }
+//   });
 
 // setup resize event
-window.addEventListener("resize", scroller.resize);
+// window.addEventListener("resize", scroller.resize);
+
+// let el = document.getElementsByClassName('artwork-images');
+
+// console.log(el);
+
+
+// imagesLoaded(document.body, function () {
+//   var img = document.querySelector("img");
+//   console.log(img.width);
+//   console.log(img.naturalWidth);
+// });
+
+//  function imagesLoaded () {
+//   var img = document.querySelector("img");
+//   console.log(img.width);
+//   console.log(img.naturalWidth);
+// };
+
+
+// elem.classList.add("testing");
+// // elem.style.paddingTop = '121.43%';
+
+// let listP = document.querySelectorAll(".artwork-images")
+
+// console.log(listP);
+
+// let j;
+
+// for (j = 0; j < listP.length; j++) {
+//   listP[j].classList.add('test' + j);
+// }
+
+// var person = { fname: "John", lname: "Doe", age: 25 };
+
+// var text = "";
+// var x;
+// for (x in person) {
+  //   text += person[x] + " ";
+  // }
+
+var elem = document.getElementsByTagName("img")[0];
+
+  console.log(elem);
+
+  function imgSize() {
+  var realWidth = elem.naturalWidth;
+  var realHeight = elem.naturalHeight;
+  console.log("Original width=" + realWidth + ", " + "Original height=" + realHeight);
+}
+
+imgSize();

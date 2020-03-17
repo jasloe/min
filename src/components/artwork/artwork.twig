@@ -1,11 +1,13 @@
 <div class="artwork__wrapper">
-	<div class="artwork-images">
-		{{ images }}
+	<div class="artwork-image">
+		<div class="artwork-image__inner">
+			{{ images }}
+		</div>
 	</div>
-	{# <div class="artwork-metadata">
-			<h2 class="field artwork-metadata__title">{{ title }}</h2>
-			<div class="field artwork-metadata__dates">{{ dates }}</div>
-			<div class="field artwork-metadata__materials">{{ materials }}</div>
-			<div class="field artwork-metadata__dimensions">{{ dimensions }}</div>
-		</div> #}
+	<div class="artwork-metadata">
+		<h2 class="field artwork-metadata__title">{{ title }}</h2>
+		<div class="field artwork-metadata__dates">{{ dates }}</div>
+		<div class="field artwork-metadata__materials">{{ materials }}</div>
+		<div class="field artwork-metadata__dimensions">{{- dimensions -}}</div>
+	</div>
 </div>

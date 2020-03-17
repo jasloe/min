@@ -3,31 +3,50 @@
   transition: opacity 3000ms !important;
 }
 
-.artwork__wrapper {
-  position: relative;
-  background: lightblue;
-  margin: 4rem;
-  .artwork-images {
+.exhibition__artwork {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
 
-    position: relative;
-    background: gray;
-    height: 0;
-    padding-top: calc(2000 / 1647 * 100%);
-  }
-  picture img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    max-width: 100%;
-    height: auto;
+@include mq($from: 1200px) {
+  .exhibition__artwork {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    .artwork__wrapper {
+      margin: 2rem;
+      flex-basis: calc(50% - 4rem);
+      box-shadow: 1px 1px 5px #cccccc;
+    }
   }
 }
 
+body {
+  background: #fffdfc !important;
+}
 
+.artwork-image {
+  margin: 0 1rem;
+  padding: 5rem;
+  background: #f7f7f7;
+
+  .artwork-image__inner {
+    position: relative;
+  }
+
+  picture img {
+    width: 100%;
+    height: auto;
+  }
+}
 .artwork-metadata {
-  background: gray;
-    h2, .field {
-      @include font-size(3rem);
-      color: red;
+  margin: 0 1rem;
+  background: white;
+  margin-top: 0.5rem;
+  padding: 3rem;
+  font-family: Arial;
+  .field {
+    font-size: 18px !important;
   }
 }
