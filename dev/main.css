@@ -156,49 +156,73 @@ a {
   color: #000000;
 }
 .js .lazyloaded {
-  -webkit-transition: opacity 3000ms !important;
-  transition: opacity 3000ms !important;
+  -webkit-transition: opacity 700ms !important;
+  transition: opacity 700ms !important;
 }
 .exhibition__artwork {
-  max-width: 1200px;
+  display: -webkit-box;
+  display: flex;
   margin: 0 auto;
-  padding: 1rem;
+  max-width: 1300px;
 }
-@media (min-width: 75em) {
-  .exhibition__artwork {
-    display: -webkit-box;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-            flex-direction: row;
-    flex-wrap: wrap;
-  }
-  .exhibition__artwork .artwork__wrapper {
-    margin: 2rem;
-    flex-basis: calc(50% - 4rem);
-    box-shadow: 1px 1px 5px #cccccc;
-  }
+.exhibition__artwork {
+  display: -webkit-box;
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
 }
-body {
-  background: #fffdfc !important;
+.exhibition__artwork:after {
+  content: "";
+  -webkit-box-flex: 1;
+          flex: auto;
 }
-.artwork-image {
-  margin: 0 1rem;
-  padding: 5rem;
-  background: #f7f7f7;
-}
-.artwork-image .artwork-image__inner {
-  position: relative;
-}
-.artwork-image picture img {
+.artwork-image__inner {
+  padding: 3rem;
+  background: #efefef;
+  border: 1px solid #ffffff;
   width: 100%;
   height: auto;
+  display: block;
+}
+.artwork__wrapper {
+  height: auto;
+  width: calc(50% - 3rem);
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  position: relative;
+}
+.artwork-image {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  line-height: 0;
+  width: 100%;
+  padding-bottom: 121.3%;
+  /* 9/16 = aspect ratio of image */
+  position: relative;
+}
+img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+  line-height: 0;
 }
 .artwork-metadata {
-  margin: 0 1rem;
   background: white;
-  margin-top: 0.5rem;
-  padding: 3rem;
+  padding: 1rem;
   font-family: Arial;
 }
 .artwork-metadata .field {
@@ -212,18 +236,5 @@ body {
   transition: opacity 500ms ease, background 500ms ease;
 }
 /* initial state */
-.barba-leave {
-  opacity: 1;
-}
-.barba-enter {
-  opacity: 0;
-}
-/* ending state */
-.barba-leave-to {
-  opacity: 0;
-}
-.barba-enter-to {
-  opacity: 1;
-}
 
 /*# sourceMappingURL=main.css.map*/

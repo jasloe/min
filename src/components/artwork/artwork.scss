@@ -1,50 +1,65 @@
 // contains style sheet for artwork nodes
 .js .lazyloaded {
-  transition: opacity 3000ms !important;
+  transition: opacity 700ms !important;
 }
 
 .exhibition__artwork {
-  max-width: 1200px;
+  display: flex;
   margin: 0 auto;
-  padding: 1rem;
+  max-width: 1300px;
 }
 
-@include mq($from: 1200px) {
-  .exhibition__artwork {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    .artwork__wrapper {
-      margin: 2rem;
-      flex-basis: calc(50% - 4rem);
-      box-shadow: 1px 1px 5px #cccccc;
-    }
+.exhibition__artwork {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  &:after {
+    content: "";
+    flex: auto;
   }
 }
 
-body {
-  background: #fffdfc !important;
+.artwork-image__inner {
+  padding: 3rem;
+  background: #efefef;
+  border: 1px solid $white;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.artwork__wrapper {
+  height: auto;
+  width: calc(50% - 3rem);
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 
 .artwork-image {
-  margin: 0 1rem;
-  padding: 5rem;
-  background: #f7f7f7;
-
-  .artwork-image__inner {
-    position: relative;
-  }
-
-  picture img {
-    width: 100%;
-    height: auto;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+  width: 100%;
+  padding-bottom: 121.3%; /* 9/16 = aspect ratio of image */
+  position: relative;
 }
+
+img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+  line-height: 0;
+}
+
 .artwork-metadata {
-  margin: 0 1rem;
   background: white;
-  margin-top: 0.5rem;
-  padding: 3rem;
+  padding: 1rem;
   font-family: Arial;
   .field {
     font-size: 18px !important;
