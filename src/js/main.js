@@ -3,10 +3,10 @@
 // import MicroModal from "../../mode_modules/micromodal"
 // MicroModal.init();
 
-import barba from "../../node_modules/@barba/core"
-import barbaCss from "../../node_modules/@barba/css"
+// import barba from "../../node_modules/@barba/core"
+// import barbaCss from "../../node_modules/@barba/css"
 
-barba.use(barbaCss);
+// barba.use(barbaCss);
 
 // // ES* test
 // if (true) {
@@ -14,22 +14,22 @@ barba.use(barbaCss);
 //   console.log(meowBus); //40
 // }
 
-barba.init({
-  transitions: [{
-    name: 'dummy-transition',
-    from: 'home',
+// barba.init({
+//   transitions: [{
+//     name: 'dummy-transition',
+//     from: 'home',
 
-    to: {
-      namespace: [
-        'exhibitions'
-      ]
-    },
-    sync: true,
-    enter() {
+//     to: {
+//       namespace: [
+//         'exhibitions'
+//       ]
+//     },
+//     sync: true,
+//     enter() {
 
-    }
-  }]
-});
+//     }
+//   }]
+// });
 
 // import "intersection-observer";
 // import scrollama from "scrollama";
@@ -91,14 +91,14 @@ barba.init({
   //   text += person[x] + " ";
   // }
 
-var elem = document.getElementsByTagName("img")[0];
+// var elem = document.getElementsByTagName("img")[0];
 
-  console.log(elem);
+//   console.log(elem);
 
-  function imgSize() {
-  var realWidth = elem.naturalWidth;
-  var realHeight = elem.naturalHeight;
-  console.log("Original width=" + realWidth + ", " + "Original height=" + realHeight);
-}
+//   function imgSize() {
+//   var realWidth = elem.naturalWidth;
+//   var realHeight = elem.naturalHeight;
+//   console.log("Original width=" + realWidth + ", " + "Original height=" + realHeight);
+// }
 
-imgSize();
+// imgSize();

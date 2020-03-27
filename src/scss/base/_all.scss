@@ -3,15 +3,7 @@ html {
 }
 
 body {
-  // -webkit-font-smoothing: antialiased;
-  // -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  text-decoration: none;
-  color: $default-color;
-}
-
-img {
-  // width: 100%;
+  font-family: $font-default;
+  text-rendering: optimizeLegibility;
+  background: gray;
 }

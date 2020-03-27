@@ -6,9 +6,9 @@ module.exports = {
     "rfs": {},
     "postcss-font-magician": {
       variants: {
-        Lora: {
-          "400": ['svg'],
-          "400 italic": ['svg']
+        'Cardo': {
+          "400": [],
+          "400 italic": []
         }
       },
       foundries: ["google"],

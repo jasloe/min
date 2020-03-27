@@ -2,5 +2,15 @@
 //   @include links;
 // }
 
-.main-menu {
+.region__header {
+  margin: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.region__header a {
+  @include links;
+  @include smallCaps;
 }

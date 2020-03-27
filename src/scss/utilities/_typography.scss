@@ -1,1 +1,30 @@
 @import "~rfs/scss";
+
+// type
+$serif: Cardo, serif;
+$serif-italic: "Cardo Italic";
+$sans: Arial, Helvetica, sans-serif;
+
+$font-default: $serif;
+$font-body: $serif;
+$font-display: $serif;
+$font-caption: $sans;
+
+$font-small: 0.8rem;
+$font-medium: 1.5rem;
+$font-large: 2rem;
+
+h1,
+h2 {
+  font-family: $font-display;
+  color: $color-default;
+}
+
+h1 {
+  @include font-size(2rem);
+}
+
+h2 {
+  font-family: $font-display;
+  @include font-size($font-medium);
+}

@@ -1,6 +1,16 @@
-// contains style sheets for exhibiton nodes
-.exhibition-marquee {
-  .exhibition-marquee__image {
-    display: none;
-  }
+.exhibition__marquee img {
+  width: 100%;
+}
+
+.exhibition__metadata {
+  margin: 0 1rem;
+  border: 1px solid white;
+}
+
+.now .exhibition__metadata {
+}
+
+.intro {
+  @include smallCaps;
+  padding-bottom: 1rem;
 }

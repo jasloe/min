@@ -31,12 +31,8 @@
  */
 #}
 
-<div{{attributes.addClass(classes)}}>
-
-	{% if rows -%}
-		{{ rows }}
-	{% elseif empty -%}
-		{{ empty }}
-	{% endif %}
-
-</div>
+{% if rows -%}
+	{{ rows }}
+{% elseif empty -%}
+	{{ empty }}
+{% endif %}

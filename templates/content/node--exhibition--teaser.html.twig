@@ -73,9 +73,9 @@
 
 {# include artwork component template #}
 {%
-  include '@asphodel/exhibition/exhibition.twig' with {
+  include '@asphodel/exhibition/exhibition--teaser.twig' with {
     title: label,
-    type: content.field_exhibition_type,
+    type: content.field_exhibition_type.0,
     marquee: content.field_exhibition_marquee,
     artists: content.field_exhibition_artists,
     dates: content.field_exhibtion_dates,
