@@ -19,12 +19,3 @@ h2 {
   font-family: $font-display;
   color: $color-default;
 }
-
-h1 {
-  @include font-size(2rem);
-}
-
-h2 {
-  font-family: $font-display;
-  @include font-size($font-medium);
-}
