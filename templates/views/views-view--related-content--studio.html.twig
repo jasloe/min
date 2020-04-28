@@ -5,7 +5,7 @@
  *
  * Available variables:
  * - attributes: Remaining HTML attributes for the element.
- * - css_name: A css-safe version of the view name.
+ * - css_name: A CSS-safe version of the view name.
  * - css_class: The user-specified classes names, if any.
  * - header: The optional header.
  * - footer: The optional footer.
@@ -30,9 +30,22 @@
  * @see template_preprocess_views_view()
  */
 #}
+{%
+  set classes = [
+    dom_id ? 'js-view-dom-id-' ~ dom_id,
+  ]
+%}
+<div{{attributes.addClass(classes)}}>
 
-{% if rows -%}
-	{{ rows }}
-{% elseif empty -%}
-	{{ empty }}
-{% endif %}
+	{% if rows -%}
+		{{ rows }}
+	{% elseif empty -%}
+		{{ empty }}
+	{% endif %}
+
+	<div class="swiper-button-next"></div>
+	<div class="swiper-button-prev"></div>
+	<!-- Add Pagination -->
+	<div class="swiper-pagination"></div>
+
+</div>

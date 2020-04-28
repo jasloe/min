@@ -11,7 +11,7 @@ use Drupal\Core\Url;
  * Implements template_preprocess_html().
  * @param array $variables
  */
-function min_preprocess_html(&$variables) {
+function ow_preprocess_html(&$variables) {
 
   if (!empty($variables['page']['sidebar_first'])) {
     $sidebar_left = $variables['page']['sidebar_first'];
@@ -46,7 +46,7 @@ function min_preprocess_html(&$variables) {
  * Implements template_preprocess_page.
  * @param array $variables
  */
-function min_preprocess_page(&$variables) {
+function ow_preprocess_page(&$variables) {
   $site_name = \Drupal::configFactory()->get('system.site')->get('name');
   $variables['linked_site_name'] = ['#type' => 'link', '#title' => $site_name, '#url' => Url::fromRoute('<front>')];
 }
@@ -54,7 +54,7 @@ function min_preprocess_page(&$variables) {
 /**
  * Implements hook_theme_suggestions_page_alter().
  */
-function min_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+function ow_theme_suggestions_page_alter(array &$suggestions, array $variables) {
   if ($node = \Drupal::routeMatch()->getParameter('node')) {
     $suggestions[] = 'page__' . $node->bundle();
   }
@@ -63,7 +63,7 @@ function min_theme_suggestions_page_alter(array &$suggestions, array $variables)
 /**
  * Implements hook_theme_suggestions_block_alter().
  */
-function min_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+function ow_theme_suggestions_block_alter(array &$suggestions, array $variables) {
   if (isset($variables['elements']['content']['#block_content'])) {
     array_splice($suggestions, 1, 0, 'block__' . $variables['elements']['content']['#block_content']->bundle());
   }
@@ -74,6 +74,6 @@ function min_theme_suggestions_block_alter(array &$suggestions, array $variables
  */
 
  // https://www.drupal.org/project/drupal/issues/3053838
-function min_preprocess_block__system_messages_block($variables) {
+function ow_preprocess_block__system_messages_block($variables) {
   $variables['content']['#include_fallback'] = FALSE;
 }

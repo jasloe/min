@@ -43,29 +43,49 @@
  * @see html.html.twig
  */
 #}
-<div class="layout__container">
+<div class="layout-container">
 
 	<header role="banner">
 		{{ page.header }}
 	</header>
 
+	{{ page.primary_menu }}
+	{{ page.secondary_menu }}
+
 	{{ page.breadcrumb }}
+
 	{{ page.highlighted }}
+
 	{{ page.help }}
 
-	<main data-barba="container" data-barba-namespace="home">
+	<main role="main">
 		<a id="main-content" tabindex="-1"></a>
+		{# link is in html.html.twig #}
 
-		<div class="layout__content">
-			{{ page.content_pre }}
+		<div class="layout-content">
 			{{ page.content }}
 		</div>
+		{# /.layout-content #}
+
+		{% if page.sidebar_first %}
+			<aside class="layout-sidebar-first" role="complementary">
+				{{ page.sidebar_first }}
+			</aside>
+		{% endif %}
+
+		{% if page.sidebar_second %}
+			<aside class="layout-sidebar-second" role="complementary">
+				{{ page.sidebar_second }}
+			</aside>
+		{% endif %}
+
+		{{ page.content_related }}
 
 	</main>
 
-	{% if page.footer_first %}
+	{% if page.footer %}
 		<footer role="contentinfo">
-			{{ page.footer_first }}
+			{{ page.footer }}
 		</footer>
 	{% endif %}
 

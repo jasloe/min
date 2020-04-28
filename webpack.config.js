@@ -8,11 +8,9 @@ module.exports = () => {
       main: ["./src/scss/main.scss", "./src/js/main.js"]
     },
     module: {
-      rules: [
-        {
+      rules: [{
           test: /\.(sa|sc|c)ss$/,
-          use: [
-            {
+          use: [{
               loader: MiniCssExtractPlugin.loader
             },
             {
@@ -32,11 +30,14 @@ module.exports = () => {
               }
             },
             {
-               loader: "sass-loader",
-               options: {
-                 implementation: require("sass")
-               }
-             },
+              loader: "sass-loader",
+              options: {
+                implementation: require("sass"),
+                sassOptions: {
+                  fiber: false,
+                }
+              }
+            },
           ]
         },
         {
@@ -45,7 +46,11 @@ module.exports = () => {
           use: {
             loader: "babel-loader",
             options: {
-              presets: [["@babel/preset-env", { modules: false }]]
+              presets: [
+                ["@babel/preset-env", {
+                  modules: false
+                }]
+              ]
             }
           }
         }

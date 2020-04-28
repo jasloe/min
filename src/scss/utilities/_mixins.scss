@@ -1,32 +1,37 @@
-@mixin flex($direction) {
-  display: flex;
-  flex-direction: $direction;
+@import "~rfs/scss";
+$font-sans: 'Source Sans Pro',
+Arial,
+sans-serif;
+$font-serif: 'Cormorant Garamond',
+Georgia,
+serif;
+
+$font-display: $font-serif;
+$font-metadata: $font-sans;
+$font-caption: $font-sans;
+$font-default: $font-sans;
+$font-emphasis: 'Old Standard TT';
+
+@mixin font-reset {
+  font-family: $font-sans;
+  @include rfs(1rem);
 }
 
-@mixin links {
-  text-decoration: none;
-  color: $black;
-}
-
-@mixin serif {
-  font-family: "Lora";
-
-  em {
-    font-family: "Lora Italic";
-  }
-}
-
-@mixin test {
-  display: none;
-}
-
-@mixin smallText {
-  font-family: $caption;
-}
-
-@mixin smallCaps {
+@mixin caption {
   font-family: $font-caption;
-  @include font-size($font-small);
+  @include rfs(.8rem);
   text-transform: uppercase;
-  letter-spacing: 0.05rem;
+  letter-spacing: .03rem;
+  font-weight: 700;
+}
+
+@mixin display {
+  font-family: $font-display;
+  @include rfs(4.2rem);
+  padding: 0;
+  margin: 0;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .05rem;
+  line-height: .8;
 }

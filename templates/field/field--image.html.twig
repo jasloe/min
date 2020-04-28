@@ -36,7 +36,7 @@
  * @see template_preprocess_field()
  */
 #}
-{# {%
+{%
   set title_classes = [
     label_display == 'visually_hidden' ? 'visually-hidden',
   ]
@@ -44,32 +44,23 @@
 
 {% if label_hidden %}
   {% if multiple %}
-    <div{{ attributes }}>
+    <div{ attributes }}>
       {% for item in items %}
         <div{{ item.attributes }}>{{ item.content }}</div>
       {% endfor %}
     </div>
   {% else %}
     {% for item in items %}
-      <div{{ attributes }}>{{ item.content }}</div>
+    {{ item.content }}
     {% endfor %}
-  {% endif %}
-{% else %}
-  <div{{ attributes }}>
-    <div{{ title_attributes.addClass(title_classes) }}>{{ label }}</div>
-    {% if multiple %}
-      <div>
     {% endif %}
+    {% else %}
     {% for item in items %}
-      <div{{ item.attributes }}>{{ item.content }}</div>
+      {{ item.content }}
     {% endfor %}
-    {% if multiple %}
-      </div>
-    {% endif %}
-  </div>
-{% endif %} #}
+{% endif %}
 
-{% if label_hidden -%}
+{# {% if label_hidden -%}
 	{% if multiple -%}
 		{% for item in items %}
       {{ item.content }}
@@ -79,4 +70,6 @@
       {{ item.content }}
 		{% endfor %}
 	{% endif %}
-{% endif %}
+{% endif %} #}
+
+

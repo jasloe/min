@@ -1,0 +1,19 @@
+.image-landscape,
+.image-portrait {
+  display: block;
+  position: relative;
+  height: 0;
+  overflow: hidden;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    max-width: inherit;
+  }
+}
+
+.image-landscape {
+  padding-bottom: calc((9 / 16) * 1000px);
+}

@@ -4,26 +4,34 @@
 # tablet landscape: > 1024px
 # laptop: > 1280px
 
-min.x-small:
+ow.x-small:
   label: x-small
-  mediaQuery: "all and (max-width: 639px)"
+  mediaQuery: "all and (max-width: 639.98px)"
   weight: 0
   multipliers:
     - 1x
     - 2x
 
-min.large:
-  label: large
-  mediaQuery: "(min-width: 768px) and (max-width: 1023px)"
+ow.medium:
+  label: medium
+  mediaQuery: "(min-width: 640px) and (max-width: 767.98px)"
   weight: 1
   multipliers:
     - 1x
     - 2x
 
-min.wide:
+ow.large:
+  label: large
+  mediaQuery: "(min-width: 768px) and (max-width: 1279.98px)"
+  weight: 2
+  multipliers:
+    - 1x
+    - 2x
+
+ow.wide:
   label: wide
   mediaQuery: "all and (min-width: 1280px)"
-  weight: 2
+  weight: 3
   multipliers:
     - 1x
     - 2x

@@ -10,9 +10,9 @@
  * @see template_preprocess_media()
  */
 #}
-<article{{ attributes }}>
-  {{ title_suffix.contextual_links }}
-  {% if content %}
-    {{ content }}
-  {% endif %}
-</article>
+<div class="media-wrapper swiper-slide">
+	{{ title_suffix.contextual_links }}
+	{% if content %}
+		{{ content }}
+	{% endif %}
+</div>

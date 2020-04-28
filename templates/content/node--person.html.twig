@@ -71,16 +71,14 @@
  */
 #}
 
-{# include artwork component template #}
+{# include work component template #}
 {%
-  include '@asphodel/exhibition/exhibition--teaser.twig' with {
+  include '@asphodel/person/person.twig' with {
     title: label,
-    type: content.field_exhibition_type.0,
-    marquee: content.field_exhibition_marquee,
-    artists: content.field_exhibition_artists,
-    dates: content.field_exhibtion_dates,
-    artwork: content.field_exhibition_artworks,
-    summary: content.field_summary,
-    body: content.field_body
+    bio: content.body,
+    portrait: content.field_person_portrait,
+    links: content.field_link,
   } only
 %}
+
+

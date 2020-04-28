@@ -1,11 +1,11 @@
-name: min
+name: ow
 type: theme
-description: "min theme, based on Stable."
-package: min
+description: "ow theme, based on Stable."
+package: ow
 core: 8.x
 libraries:
-  - min/global-styling
-  - min/global-scripts
+  - ow/global-styling
+  - ow/global-scripts
 base theme: stable
 
 regions:

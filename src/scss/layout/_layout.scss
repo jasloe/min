@@ -1,4 +1,10 @@
-.layout__container {
-  //   margin: 0 auto;
-  //   max-width: $max-width;
+body {
+  margin: 0;
+  padding: 0;
+}
+
+@include mq($from: large) {
+  body {
+    padding: 0 3%;
+  }
 }

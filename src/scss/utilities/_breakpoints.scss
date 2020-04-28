@@ -1,0 +1,18 @@
+$small: 0px;
+$medium: 640px;
+$large: 768px;
+$wide: 1280px;
+
+$max-vw: $wide;
+
+$mq-responsive: true;
+
+$mq-breakpoints: (small: 0px,
+  medium: 640px,
+  large: 768px,
+  wide: 1280px);
+
+// $mq-static-breakpoint: desktop;
+$mq-show-breakpoints: (small, medium, large, wide);
+
+@import "../vendor/mq";

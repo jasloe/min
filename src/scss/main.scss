@@ -1,14 +1,48 @@
 @charset "utf-8";
 
-@import "../../node_modules/sass-mq/mq";
-
 @import "utilities/all";
+
+
+@import "../../src/components/work/work.scss";
+@import "../../src/components/person/person.scss";
+
 @import "base/all";
 @import "layout/all";
-@import "navigation/all";
 
-@import "../../src/components/artwork/artwork";
-@import "../../src/components/exhibition/exhibition";
+@import "swiper/src/swiper.scss";
+
+img {
+  width: 50%;
+}
+
+.swiper-container {
+  width: 50%;
+  height: 50%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+// @import "navigation/all";
+
+// @import "../../src/components/exhibition/exhibition";
 
 // .barba-enter-active {
 //   transition: opacity 500ms ease, background 500ms ease;

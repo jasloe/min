@@ -71,16 +71,12 @@
  */
 #}
 
-{# include artwork component template #}
+
+
+{# include work component template #}
 {%
-  include '@asphodel/artwork/artwork.twig' with {
-    images: content.field_artwork_images,
+  include '@asphodel/studio/studio.twig' with {
     title: label,
-    dates: content.field_artwork_dates,
-    materials: content.field_artwork_materials_descr,
-    dimensions: content.field_artwork_dims
+    images: content.field_studio_image
   } only
 %}
-
-
-

@@ -70,3 +70,16 @@
  *   in different view modes.
  */
 #}
+
+
+
+{# include work component template #}
+{%
+  include '@asphodel/work/work.twig' with {
+    image: content.field_work_image,
+    title: label,
+    date: content.field_work_date,
+    materials: content.field_work_material_descr,
+    dimensions: content.field_work_dims
+  } only
+%}

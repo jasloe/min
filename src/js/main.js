@@ -1,3 +1,19 @@
+import Swiper from "swiper";
+
+var swiper = new Swiper('.swiper-container', {
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+});
+
+// import 'fitty.js';
+
+// fitty('h1.name', {
+//   minSize: 12,
+//   maxSize: 18
+// })
+
 // import "../sass/styles.scss";
 
 // import MicroModal from "../../mode_modules/micromodal"
@@ -56,7 +72,6 @@
 
 // console.log(el);
 
-
 // imagesLoaded(document.body, function () {
 //   var img = document.querySelector("img");
 //   console.log(img.width);
@@ -68,7 +83,6 @@
 //   console.log(img.width);
 //   console.log(img.naturalWidth);
 // };
-
 
 // elem.classList.add("testing");
 // // elem.style.paddingTop = '121.43%';
@@ -88,8 +102,8 @@
 // var text = "";
 // var x;
 // for (x in person) {
-  //   text += person[x] + " ";
-  // }
+//   text += person[x] + " ";
+// }
 
 // var elem = document.getElementsByTagName("img")[0];
 
