@@ -43,7 +43,7 @@
     "sass-loader": "^8.0.2",
     "scrollama": "^2.2.0",
     "style-loader": "^1.0.1",
-    "swiper": "^5.3.8",
+    "swiper": "^6.5.1",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.9.0"
